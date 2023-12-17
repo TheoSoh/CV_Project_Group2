@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using CV_Project_Group2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CV_Project_Group2.Controllers;
 
@@ -13,15 +14,14 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    //[Authorize]
     public IActionResult Index()
     {
         return View();
     }
 
-   // public IActionResult User()
-    //{
-    //    return View("UserProfile");
-    //}
+
+  
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
