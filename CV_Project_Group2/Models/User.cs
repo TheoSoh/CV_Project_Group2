@@ -2,6 +2,7 @@
 
 using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 public class User : IdentityUser
 {
@@ -11,7 +12,7 @@ public class User : IdentityUser
     [Required]
     public string FirstName { get; set; }
 
-    public string LastName { get; set; }    
+    public string LastName { get; set; }
 
     public string Password { get; set; }
 
@@ -19,7 +20,7 @@ public class User : IdentityUser
 
     public bool Login_status { get; set; }
 
-    public int Adress_id { get; set; }
+    public Address Address { get; set; }
 
     public CV Cv {  get; set; }
 

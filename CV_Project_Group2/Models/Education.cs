@@ -10,7 +10,7 @@ namespace CV_Project_Group2.Models
 
         public int Cv_id { get; set; }
         [ForeignKey(nameof(Cv_id))]
-        public virtual CV cv { get; set; }
+        public virtual CV Cv { get; set; }
 
     }
 }
