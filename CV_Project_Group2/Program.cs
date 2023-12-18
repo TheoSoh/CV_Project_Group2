@@ -1,7 +1,11 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using CV_Project_Group2.Models;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<CvDbContext>(options => options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("CvDbConnectionString")));
 
 var app = builder.Build();
 
