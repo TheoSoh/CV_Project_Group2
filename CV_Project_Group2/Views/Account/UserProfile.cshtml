@@ -1,9 +1,30 @@
-﻿@model User
+﻿@model List<User>
 
 <h1>Användare</h1>
 
-<div class="d-flex align-items-start">...</div>
-<div class="d-flex align-items-end">...</div>
-<div class="d-flex align-items-center">...</div>
-<div class="d-flex align-items-baseline">...</div>
-<div class="d-flex align-items-stretch">...</div>
+<head>
+    <title>Person Information</title>
+</head>
+
+<table class="table">
+    <thead>
+        <td>Användarnamn</td>
+        <td>Förnamn</td>
+        <td>Efternamn</td>
+        <td>Ålder</td>
+        <td>Adress</td>
+        <td>Email</td>
+       
+    </thead>
+<tbody>
+        @foreach(var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Email</td>
+            </tr>
+        }
+</tbody>
+ </table>
