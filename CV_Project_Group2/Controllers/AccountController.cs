@@ -56,7 +56,21 @@ namespace CV_Project_Group2.Controllers;
 
             return View(registerViewModel);
         }
-    }
+
+        public IActionResult UserProfile() 
+        {
+        var user = new User
+        {
+            UserName = "john_doe",
+            FirstName = "John",
+            LastName = "Doe",
+            Email = "john@example.com"
+        };
+
+        return View("UserProfile", user); 
+    
+        }
+}
 
 
 
