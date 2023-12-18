@@ -10,37 +10,38 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CV_Project_Group2</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse justify-content-between" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Logga in</a>
+                            <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Logga in</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Account" asp-action="UserProfile">Användare</a>
                         </li>
                     </ul>
-                </div>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="UserProfile">Användare</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Meny
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><button class="dropdown-item" type="button">Hem</button></li>
-                        <li><button class="dropdown-item" type="button">Profiler</button></li>
-                        <li><button class="dropdown-item" type="button">Projekt</button></li>
-                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Sök..." aria-label="Search">
+                        <button class="btn btn-outline-secondary" type="submit">Sök</button>
+                    </form>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Meny
+                        </button>
+                        <ul class="dropdown-menu bg" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item text-black" href="@Url.Action("Index", "Home")">Hem</a></li>
+                            <li><a class="dropdown-item text-black" href="@Url.Action("Login", "Account")">Logga in</a></li>
+                            <li><a class="dropdown-item text-black" href="#">Projekt</a></li>
+                            <li><a class="dropdown-item text-black" href="#">CV</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -51,7 +52,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted bg-light">
         <div class="container">
             &copy; 2023 - CV_Project_Group2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
@@ -62,4 +63,3 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
-
