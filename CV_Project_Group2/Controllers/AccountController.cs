@@ -42,6 +42,12 @@ namespace CV_Project_Group2.Controllers;
 
                 User user = new User();
                 user.UserName = registerViewModel.UserName;
+                user.FirstName = registerViewModel.FirstName;
+                user.LastName = registerViewModel.LastName;
+                user.Email = registerViewModel.Email;
+                user.PhoneNumber = registerViewModel.PhoneNumber;
+                user.Password = registerViewModel.Password;
+            
 
                 var result = await _userManager.CreateAsync(user, registerViewModel.Password);
 
@@ -49,10 +55,15 @@ namespace CV_Project_Group2.Controllers;
                 {
 
                     await _signInManager.SignInAsync(user, isPersistent: true); // skapar en cookie som tillåter användaren att vara inloggad i flera sessioner samtidigt, även om webbläsaren stängs ner
-                    return RedirectToAction("Index", "HomeController");
+                    return RedirectToAction("Login", "Account");
 
                 }
-            }
+
+                foreach (var error in result.Errors)
+                {
+                ModelState.AddModelError(string.Empty, error.Description);
+                }
+        }
 
             return View(registerViewModel);
         }
