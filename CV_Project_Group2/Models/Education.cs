@@ -1,16 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CV_Project_Group2.Models
 {
     public class Education
     {
-        public int id {  get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Education_ID {  get; set; }
         public string Education_name { get; set; }
 
-        public int Cv_id { get; set; }
-        [ForeignKey(nameof(Cv_id))]
-        public virtual CV Cv { get; set; }
+        public virtual ICollection<CV_Education> CV_Education { get; set; } = new List<CV_Education>();
+
+
 
     }
 }
