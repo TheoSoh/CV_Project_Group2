@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace CV_Project_Group2.Models
 {
-    public class CvDbContext : DbContext
+    public class CvDbContext : IdentityDbContext<User>
     {
 
-        public CvDbContext(DbContextOptions<CvDbContext>options) : base(options) 
+        public CvDbContext(DbContextOptions<CvDbContext> options) : base(options) 
         { 
         }
 

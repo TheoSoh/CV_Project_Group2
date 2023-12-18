@@ -1,4 +1,5 @@
 ﻿using CV_Project_Group2.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<CvDbContext>(options => options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("CvDbConnectionString")));
+
+builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<CvDbContext>().AddDefaultTokenProviders();
 
 var app = builder.Build();
 
@@ -19,6 +22,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseAuthentication();
 
 app.UseRouting();
 
