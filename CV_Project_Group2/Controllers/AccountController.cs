@@ -5,14 +5,14 @@ using Microsoft.AspNetCore.Identity;
 
 namespace CV_Project_Group2.Controllers;
 
-    public class UserController : Controller
+    public class AccountController : Controller
     {
 
-        private readonly ILogger<UserController> _logger;
+        private readonly ILogger<AccountController> _logger;
         private UserManager<User> _userManager;
         private SignInManager<User> _signInManager;
 
-        public UserController(ILogger<UserController> logger, UserManager<User> userMngr, SignInManager<User> signInMngr)
+        public AccountController(ILogger<AccountController> logger, UserManager<User> userMngr, SignInManager<User> signInMngr)
         {
             _logger = logger;
             _userManager = userMngr;

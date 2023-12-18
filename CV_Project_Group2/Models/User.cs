@@ -1,7 +1,9 @@
 ﻿namespace CV_Project_Group2.Models;
+
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
-public class User
+public class User : IdentityUser
 {
     [Key]
     public string UserName { get; set; }
