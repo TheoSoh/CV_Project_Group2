@@ -19,7 +19,7 @@ public class User
 
     public int Adress_id { get; set; }
 
-    public CV cv {  get; set; }
+    public CV Cv {  get; set; }
 
     public virtual ICollection<User_Project> User_Projects { get; set; } = new List<User_Project>();
 

@@ -5,12 +5,12 @@ namespace CV_Project_Group2.Models
     public class CV
     {
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
 
         public int User_id { get; set; }
         [ForeignKey(nameof(User_id))]
-        public User user { get; set; }
+        public User User { get; set; }
 
         public virtual ICollection<Experience> experience { get; set; } = new List<Experience>();
 

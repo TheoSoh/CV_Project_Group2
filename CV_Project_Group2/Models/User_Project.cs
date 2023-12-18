@@ -9,9 +9,9 @@ namespace CV_Project_Group2.Models
         public int Project_id { get; set; }
 
         [ForeignKey(nameof(User_id))]
-        public User user { get; set; }
+        public User User { get; set; }
 
         [ForeignKey(nameof(Project_id))]
-        public Project project { get; set; }    
+        public Project Project { get; set; }    
     }
 }
