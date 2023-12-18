@@ -1,4 +1,6 @@
-﻿namespace CV_Project_Group2.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CV_Project_Group2.Models
 {
     public class Address
     {
@@ -11,6 +13,9 @@
         public string Address_City { get; set; }
 
         public string Adress_postcode { get; set; }
-        
+
+        public int UserName { get; set; }
+        [ForeignKey(nameof(UserName))]
+        public virtual User User { get; set; }
     }
 }
