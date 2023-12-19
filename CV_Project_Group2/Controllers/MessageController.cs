@@ -17,6 +17,13 @@ namespace CV_Project_Group2.Controllers
             _dbContext = dbContext;
         }
 
+        public IActionResult Inbox()
+        {
+            var userID = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            //var userMessages = _dbContext.Messages.Where(m => m.RecieverId == userID).ToList();
+            return View("Inbox");
+        }
+
        public async Task<IActionResult> SendMessage(string content)
         {
             var senderID = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;

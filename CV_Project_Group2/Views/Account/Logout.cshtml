@@ -1,0 +1,11 @@
+﻿@model User
+
+
+<AuthorizeView>
+    <Authorized>
+        <h2>Du är inloggad som @User.Identity.Name</h2>
+        <a asp-controller"Account" asp-action"Logout" class="btn-link">Logga ut</a>
+    </Authorized>
+
+
+</AuthorizeView>

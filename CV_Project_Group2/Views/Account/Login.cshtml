@@ -37,6 +37,15 @@
 
 </form>
 
+<form method="post" asp-controller="Account" asp-action="Logout">
+<AuthorizeView>
+    <Authorized>
+    <input type="submit" value="Logga ut" />
+        </Authorized>
+</AuthorizeView>
+</form>
+
+
 <link rel="stylesheet" href="styles.css" />
 
 <style>

@@ -30,6 +30,7 @@
                         <input class="form-control me-2" type="search" placeholder="Sök..." aria-label="Search">
                         <button class="btn btn-outline-secondary" type="submit">Sök</button>
                     </form>
+                    
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,8 +39,8 @@
                         <ul class="dropdown-menu bg" aria-labelledby="dropdownMenuButton">
                             <li><a class="dropdown-item text-black" href="@Url.Action("Index", "Home")">Hem</a></li>
                             <li><a class="dropdown-item text-black" href="@Url.Action("Login", "Account")">Logga in</a></li>
-                            <li><a class="dropdown-item text-black" href="#">Projekt</a></li>
-                            <li><a class="dropdown-item text-black" href="#">CV</a></li>
+                            <li><a class="dropdown-item text-black" href="@Url.Action("UserCV", "Cv")">CV</a></li>
+                            <li><a class="dropdown-item text-black" href="@Url.Action("Project", "Project")">Projekt</a></li>
                         </ul>
                     </div>
                 </div>
