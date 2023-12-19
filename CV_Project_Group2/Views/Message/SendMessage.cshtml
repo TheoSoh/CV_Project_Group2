@@ -1,0 +1,17 @@
+﻿@model Message
+
+<h1>Skicka meddelande</h1>
+
+<form asp-action="SendMessage" asp-controller="Message" method="post">
+    <div>
+        <label>Mottagarens ID:</label>
+        <!--<input asp-for="ReceiverId" class="form-control" />-->
+    </div>
+
+    <div>
+        <label>Meddelande:</label>
+        <textarea asp-for="Content" class="form-control"></textarea>
+    </div>
+    <button type="submit">Skicka</button>
+</form>
+}
