@@ -36,7 +36,8 @@ namespace CV_Project_Group2.Controllers;
             if (ModelState.IsValid)
             {
 
-                var result = await _signInManager.PasswordSignInAsync(loginViewModel.UserName, loginViewModel.Password, loginViewModel.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(loginViewModel.UserName, loginViewModel.Password, 
+                                                 isPersistent:loginViewModel.RememberMe, lockoutOnFailure: false);
 
                 if (result.Succeeded)
                 {
@@ -54,11 +55,16 @@ namespace CV_Project_Group2.Controllers;
             }
 
         return View(loginViewModel);
-
-
         }
 
+        [HttpPost]
 
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index");
+
+        }
 
         [HttpGet]
 

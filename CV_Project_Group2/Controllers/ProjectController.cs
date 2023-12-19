@@ -7,9 +7,9 @@ namespace CV_Project_Group2.Controllers;
 
     public class ProjectController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Project()
         {
-            return View();
+            return View("Project");
         }
     }
 

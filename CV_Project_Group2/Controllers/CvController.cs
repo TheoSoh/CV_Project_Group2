@@ -6,9 +6,9 @@ namespace CV_Project_Group2.Controllers;
 
     public class CvController : Controller
     {
-        public IActionResult Index()
+        public IActionResult UserCV()
         {
-            return View();
+            return View("UserCV");
         }
     }
 
