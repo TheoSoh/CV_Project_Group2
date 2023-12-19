@@ -13,6 +13,6 @@ namespace CV_Project_Group2.Models
 
         public  byte[]? ImageProject { get; set; }
 
-        public virtual ICollection<User_Project> User_Projects { get; set; } = new List<User_Project>();
+        public virtual ICollection<User_Project> User_Projects { get; set; } 
     }
 }

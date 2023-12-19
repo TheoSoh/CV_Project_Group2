@@ -85,7 +85,7 @@ namespace CV_Project_Group2.Controllers;
                 user.LastName = registerViewModel.LastName;
                 user.Email = registerViewModel.Email;
                 user.PhoneNumber = registerViewModel.PhoneNumber;
-                user.Password = registerViewModel.Password;
+                user.PasswordHash = registerViewModel.Password;
             
 
                 var result = await _userManager.CreateAsync(user, registerViewModel.Password);

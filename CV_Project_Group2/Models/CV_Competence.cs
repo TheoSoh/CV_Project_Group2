@@ -8,10 +8,10 @@ namespace CV_Project_Group2.Models
         public int Cv_ID { get; set; }
         public int Competence_ID { get; set; }
 
-        [ForeignKey(nameof(Cv_ID))]
-        public virtual CV CV { get; set; }
+        
+        public virtual CV? CV { get; set; }
 
-        [ForeignKey(nameof(Competence_ID))]
-        public virtual Competence Competence { get; set; }
+
+        public virtual Competence? Competence { get; set; }
     }
 }
