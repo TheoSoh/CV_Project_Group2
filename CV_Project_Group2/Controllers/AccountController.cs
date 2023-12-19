@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using CV_Project_Group2.Models;
 using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
 
 namespace CV_Project_Group2.Controllers;
 
@@ -26,6 +27,38 @@ namespace CV_Project_Group2.Controllers;
             return View(loginViewModel);
 
         }
+
+        [HttpPost]
+
+        public async Task<IActionResult> Login(LoginViewModel loginViewModel)
+        {
+
+            if (ModelState.IsValid)
+            {
+
+                var result = await _signInManager.PasswordSignInAsync(loginViewModel.UserName, loginViewModel.Password, loginViewModel.RememberMe, lockoutOnFailure: false);
+
+                if (result.Succeeded)
+                {
+
+                    return RedirectToAction("Index", "Home");
+    
+                }
+                else
+                {
+                    ModelState.AddModelError(string.Empty, "Det gick inte att logga in");
+                    return View(loginViewModel);
+
+                }
+
+            }
+
+        return View(loginViewModel);
+
+
+        }
+
+
 
         [HttpGet]
 
