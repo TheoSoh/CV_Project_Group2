@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<CvDbContext>(options => options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("CvDbConnectionString")));
+builder.Services.AddDbContext<CvDbContext>(options => options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("CvDbContext")));
 
 builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<CvDbContext>().AddDefaultTokenProviders();
 
@@ -23,9 +23,11 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseAuthentication();
 
 app.UseRouting();
+
+app.UseAuthentication();
+
 
 app.UseAuthorization();
 

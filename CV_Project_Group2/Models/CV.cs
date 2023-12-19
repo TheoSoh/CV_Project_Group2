@@ -10,9 +10,9 @@ namespace CV_Project_Group2.Models
         public int Cv_ID { get; set; }
 
 
-        public int User_ID { get; set; }
+        public String? User_ID { get; set; }
         [ForeignKey(nameof(User_ID))]
-        public virtual User User { get; set; }
+        public virtual User? User { get; set; }
 
         public virtual ICollection<CV_Education> CV_Education { get; set; } = new List<CV_Education>();
         public virtual ICollection<CV_Experience> CV_Experience { get; set; } = new List<CV_Experience>();

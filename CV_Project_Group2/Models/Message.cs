@@ -11,7 +11,7 @@ namespace CV_Project_Group2.Models
         public  string? Content  { get; set; }
         public  bool?  Read { get; set; }
 
-        public  int User_ID { get; set; }
+        public  String? User_ID { get; set; }
         [ForeignKey(nameof(User_ID))]
         public  virtual User? User { get; set; }
     }
